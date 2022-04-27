@@ -12,4 +12,17 @@ import org.springframework.stereotype.Service;
 public class DepartmentServiceImpl implements DepartmentService{
     @Autowired
     private DepartmentRepository departmentRepository;
+
+    //Save operation
+    @Override
+    public Department saveDepartment(Department department)
+    {
+        return (Department) departmentRepository.save(department);
+    }
+    //Read operation
+    @Override
+    public List<Department> fetchDepartmentList()
+    {
+        return (List<Department>) departmentRepository.findAll();
+    }
 }
