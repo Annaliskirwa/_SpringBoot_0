@@ -60,3 +60,5 @@ public class DepartmentServiceImpl implements DepartmentService{
         departmentRepository.deleteById(departmentId);
     }
 }
+
+
