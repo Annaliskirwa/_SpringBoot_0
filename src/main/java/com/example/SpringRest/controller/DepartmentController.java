@@ -21,4 +21,12 @@ public class DepartmentController {
         return departmentService.saveDepartment(department);
     }
 
+    //Read operation
+    @GetMapping("/departments")
+    public List<Department> fetchDepartmentList()
+    {
+        return departmentService.fetchDepartmentList();
+    }
+
+
 }
