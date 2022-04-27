@@ -25,4 +25,38 @@ public class DepartmentServiceImpl implements DepartmentService{
     {
         return (List<Department>) departmentRepository.findAll();
     }
+    //Update repository
+    @Override
+    public Department updateDepartment(Department department, Long departmentId)
+    {
+        Department depDB = (Department) departmentRepository.findById(departmentId).get();
+        if (Objects.nonNull(department.getDepartmentName())
+                && !"".equalsIgnoreCase(
+                department.getDepartmentName())) {
+            depDB.setDepartmentName(
+                    department.getDepartmentName());
+        }
+
+        if (Objects.nonNull(
+                department.getDepartmentAddress())
+                && !"".equalsIgnoreCase(
+                department.getDepartmentAddress())) {
+            depDB.setDepartmentAddress(
+                    department.getDepartmentAddress());
+        }
+
+        if (Objects.nonNull(department.getDepartmentCode())
+                && !"".equalsIgnoreCase(
+                department.getDepartmentCode())) {
+            depDB.setDepartmentCode(
+                    department.getDepartmentCode());
+        }
+        return (Department) departmentRepository.save(depDB);
+    }
+    //Delete operation
+    @Override
+    public void deleteDepartmentById(Long departmentId)
+    {
+        departmentRepository.deleteById(departmentId);
+    }
 }
