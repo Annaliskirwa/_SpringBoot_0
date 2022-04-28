@@ -5,6 +5,8 @@ import com.example.SpringRest.repository.DepartmentRepository;
 
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -58,6 +60,11 @@ public class DepartmentServiceImpl implements DepartmentService{
     public void deleteDepartmentById(Long departmentId)
     {
         departmentRepository.deleteById(departmentId);
+    }
+    //search operation
+    public Optional<Department> findById(Long id)
+    {
+        return departmentRepository.findById(id);
     }
 }
 

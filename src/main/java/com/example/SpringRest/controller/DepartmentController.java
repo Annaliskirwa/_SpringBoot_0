@@ -38,5 +38,13 @@ public class DepartmentController {
         departmentService.deleteDepartmentById(departmentId);
         return "The department has been successfully deleted";
     }
-
+    //search controller
+    @GetMapping("/departments/{id}")
+    public Optional<Department> findById(@PathVariable("id") Long departmentId)
+    {
+        Optional<Department> departmentList;
+//        departmentList = departmentService.findById(departmentId);
+//        return departmentList;
+        return departmentService.findById(departmentId);
+    }
 }
