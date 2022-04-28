@@ -18,4 +18,7 @@ public interface DepartmentService {
     //Delete operation
     void deleteDepartmentById(Long departmentId);
 
+    //Search operation
+    Department searchDepartment(Department department,Long departmentId);
+
 }
