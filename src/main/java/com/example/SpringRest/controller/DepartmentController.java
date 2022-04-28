@@ -3,6 +3,7 @@ package com.example.SpringRest.controller;
 import com.example.SpringRest.entity.Department;
 import com.example.SpringRest.service.DepartmentService;
 import java.util.List;
+import java.util.Optional;
 
 import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -37,6 +38,5 @@ public class DepartmentController {
         departmentService.deleteDepartmentById(departmentId);
         return "The department has been successfully deleted";
     }
-
 
 }
