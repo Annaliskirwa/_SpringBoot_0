@@ -7,4 +7,13 @@ public class BeanEmployee {
         //no arg constructor
     }
 
+    //gettere and setter
+    public Integer getProperty() {
+        return property;
+    }
+
+    public void setProperty(Integer property) {
+        this.property = property;
+    }
+
 }
