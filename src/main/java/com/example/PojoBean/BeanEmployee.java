@@ -9,11 +9,20 @@ public class BeanEmployee {
 
     //gettere and setter
     public Integer getProperty() {
-        return property;
+        {
+            if (property == 0){
+                return null;
+            }
+            return property;
+        }
     }
 
     public void setProperty(Integer property) {
-        this.property = property;
+        if (property == 0)
+        {
+            return;
+        }
+        this.property=property;
     }
 
 }
